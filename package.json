@@ -1,0 +1,25 @@
+{
+  "name": "sorting-hat-quiz",
+  "version": "1.0.0",
+  "description": "哈利波特分院帽测试器 - 霍格沃茨魔法学校分院测试",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve . -p 3000",
+    "dev": "serve . -p 3000"
+  },
+  "keywords": [
+    "harry-potter",
+    "sorting-hat",
+    "hogwarts",
+    "quiz",
+    "gryffindor",
+    "slytherin",
+    "ravenclaw",
+    "hufflepuff"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

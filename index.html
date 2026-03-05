@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分院帽测试器 - 霍格沃茨魔法学校</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="magic-particles" id="particles"></div>
+    
+    <div class="container">
+        <!-- 欢迎页面 -->
+        <section id="welcome-screen" class="screen active">
+            <div class="hat-container">
+                <div class="sorting-hat">
+                    <div class="hat-body">
+                        <div class="hat-top"></div>
+                        <div class="hat-face">
+                            <div class="eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                            <div class="mouth"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title">分院帽测试器</h1>
+            <p class="subtitle">欢迎来到霍格沃茨魔法学校</p>
+            <p class="description">让我来看看你的内心，决定你属于哪个学院...</p>
+            <button class="magic-btn" onclick="startQuiz()">
+                <span class="btn-text">开始分院</span>
+                <span class="btn-sparkle"></span>
+            </button>
+        </section>
+
+        <!-- 测试页面 -->
+        <section id="quiz-screen" class="screen">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span class="progress-text" id="progress-text">1 / 8</span>
+            </div>
+            
+            <div class="question-container">
+                <div class="hat-icon-small">🎩</div>
+                <h2 id="question-text" class="question-text"></h2>
+                <div id="options-container" class="options-container"></div>
+            </div>
+        </section>
+
+        <!-- 思考页面 -->
+        <section id="thinking-screen" class="screen">
+            <div class="hat-container thinking">
+                <div class="sorting-hat">
+                    <div class="hat-body">
+                        <div class="hat-top"></div>
+                        <div class="hat-face">
+                            <div class="eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                            <div class="mouth speaking"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thinking-text" id="thinking-text">嗯... 让我想想...</div>
+            <div class="thinking-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </section>
+
+        <!-- 结果页面 -->
+        <section id="result-screen" class="screen">
+            <div class="result-hat-container">
+                <div class="sorting-hat result-hat">
+                    <div class="hat-body">
+                        <div class="hat-top"></div>
+                        <div class="hat-face">
+                            <div class="eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                            <div class="mouth"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="announcement" id="announcement"></div>
+            <div class="house-result" id="house-result">
+                <div class="house-crest" id="house-crest"></div>
+                <h2 class="house-name" id="house-name"></h2>
+                <p class="house-traits" id="house-traits"></p>
+                <p class="house-description" id="house-description"></p>
+            </div>
+            <div class="result-actions">
+                <button class="magic-btn secondary" onclick="shareResult()">
+                    <span class="btn-text">分享结果</span>
+                </button>
+                <button class="magic-btn" onclick="restartQuiz()">
+                    <span class="btn-text">重新测试</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- 音效 -->
+    <audio id="magic-sound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2teleR0NZKrk7rNsGgxJkNTsvXwkDk+L0O+0eyUOUIjN7LR7JQ5Ph9DutHslDk6HzOu0eyUOTofM6rN7JQ5Oh8zps3slDk6HzOmyfCUOTojL6bJ8JQ5NiMrpsnwlDk2IyemxfCUOTIfJ6LF8JQ5Mh8nosHwlDkyGyOewfCUOS4XH5q98JQ5KhMbkq3wlDkeCxOOofCUORoHD4aZ8JQ5FgMLgpHwlDkR+w+GjfCUOQ37C4Z98JQ5CfcLgnnwlDkF9weCdfCUOP3vA4Jt8JQ4+e8DgmnwlDj17wN+afCUOPXvA3Zl8JQ45e7/dmXwlDjl3v92ZfCUOOXe/3ZV8JQ41d7/dkXwlDjFzv9mNfCUOLW+/2Y18JQ4pb7/ZiXwhDiVrv9WFfCEOIWe72YV8IQ4dY7vVfXwhDhlbu9F5fCEOGVa7zXV8IQ4VVrvJcXwhDg1Ou8Vt" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
